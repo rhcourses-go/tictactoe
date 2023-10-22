@@ -1,0 +1,49 @@
+= Tic Tac Toe
+
+Dieses Repo enthält eine Implementierung des Spiels "Tic Tac Toe" für die Konsole.
+
+Dabei wird zunächst eine sehr einfache Implementierung gewählt, die lediglich
+grundlegende Programmierkonzepte wie Schleifen, Verzweigungen und Funktionen
+nutzt.
+
+Das Projekt besteht aus drei Packages: `boardrow`, `board` und `game`.
+
+**Package `boardrow`**
+
+In `boardrow` befindet sich eine Umsetzung einer Zeile des Spielbretts.
+Eine solche Zeile ist als Liste von Strings umgesetzt, wobei wir
+annehmen, dass jedes Element nur aus einem Zeichen besteht.
+Das Package definiert zunächst in der Datei link:boardrow/boardrow.go[boardrow.go]
+einen Typ `BoardRow` und Konstruktoren, die solche Zeilen erzeugen.
+Außerdem gibt es in der Datei link:boardrow/boardrowlogic.go[boardrowlogic.go]
+Funktionen, die die Zeilen auf bestimmte Eigenschaften prüfen.
+In link:boardrow/print.go[print.go] ist die Ausgabe der Zeilen umgesetzt.
+
+**Package `board`**
+
+In `board` befindet sich eine Umsetzung des Spielbretts.
+Ein Spielbrett ist als Liste von Zeilen umgesetzt, wobei wir
+annehmen, dass jede Zeile die gleiche Länge hat.
+Das Package definiert zunächst in der Datei link:board/board.go[board.go]
+einen Typ `Board` und Konstruktoren, die solche Bretter erzeugen.
+Außerdem gibt es hier Funktionen, die aus einem Spielbrett einzelne
+Zeilen, Spalten oder Diagonalen extrahieren.
+
+In link:board/boardlogic.go[boardlogic.go] sind wieder Funktionen umgesetzt, die
+die Bretter auf bestimmte Eigenschaften prüfen und
+in link:board/print.go[print.go] ist die Ausgabe der Bretter umgesetzt.
+
+**Package `game`**
+
+In `game` befindet sich die eigentliche Spiellogik.
+In link:game/game.go[game.go] ist eine Funktion `Run` umgesetzt,
+die den eigentlichen Spielablauf steuert.
+In link:game/gamelogic.go[gamelogic.go] sind Funktionen umgesetzt, die
+die Spielzüge prüfen und ausführen.
+In link:game/userinput.go[userinput.go] befinden sich diejenigen Funktionen,
+die die Eingabe des Benutzers verarbeiten.
+
+Im Package `game` befinden sich auch noch zwei Unter-Packages `tictactoe-main`
+und `testinput`. Beide enthalten jeweils eine `main`-Funktion, die das Spiel
+startet bzw. eine Test-Umgebung für die Funktionen aus 
+link:game/userinput.go[userinput.go] bereitstellt.
