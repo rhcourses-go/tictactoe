@@ -6,7 +6,7 @@ Dabei wird zunächst eine sehr einfache Implementierung gewählt, die lediglich
 grundlegende Programmierkonzepte wie Schleifen, Verzweigungen und Funktionen
 nutzt.
 
-Das Projekt besteht aus drei Packages: `boardrow`, `board` und `game`.
+Das Projekt besteht aus drei Packages: `boardrow`, `board`, `game` und `botgame`.
 
 **Package `boardrow`**
 
@@ -35,7 +35,7 @@ in link:board/print.go[print.go] ist die Ausgabe der Bretter umgesetzt.
 
 **Package `game`**
 
-In `game` befindet sich die eigentliche Spiellogik.
+In `game` befindet sich die Spiellogik für ein Spiel mit zwei mesnchlichen Spielern.
 In link:game/game.go[game.go] ist eine Funktion `Run` umgesetzt,
 die den eigentlichen Spielablauf steuert.
 In link:game/gamelogic.go[gamelogic.go] sind Funktionen umgesetzt, die
@@ -47,3 +47,10 @@ Im Package `game` befinden sich auch noch zwei Unter-Packages `tictactoe-main`
 und `testinput`. Beide enthalten jeweils eine `main`-Funktion, die das Spiel
 startet bzw. eine Test-Umgebung für die Funktionen aus 
 link:game/userinput.go[userinput.go] bereitstellt.
+
+**Package `botgame`**
+
+In `botgame` befindet sich die Spiellogik für ein Spiel mit einem menschlichen
+und einem computergesteuerten Spieler.
+Das eigentliche Spiel in link:botgame/botgame.go[botgame.go] ist analog zu
+link:game/game.go[game.go] umgesetzt. Der einzige Unterschied besteht darin,
